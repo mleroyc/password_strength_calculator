@@ -1,5 +1,6 @@
 package src;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -36,7 +37,7 @@ public class Main {
         int numberChar = (lower > 0 ? LOWER : 0) + (upper > 0 ? UPPER : 0) + (digit > 0 ? DIGIT : 0) + (special > 0 ? SPECIAL : 0);
         double entropy = Math.log(Math.pow(numberChar, password.length())) / Math.log(2);
         
-        System.out.println("\nEntropy : " + entropy);
+        System.out.println("\nEntropy : " + new DecimalFormat("0.00").format(entropy));
 
         if(0 <= entropy && entropy <= 35) {
             System.out.println("-> Very weak");
